@@ -132,7 +132,7 @@ void ActivityTaskChangeMove::abstract_revert_move(State& state)
         ++state.all_activity_count;
         ++state.shift_activity_count[shift];
 
-        for (int a = state.shift_activity_count[shift] - 1; a >= temp_activity + 2; --a) {
+        for (int a = state.shift_activity_count[shift] - 1; a >= temp_activity + 1; --a) {
             state.activity_length[shift][a] = state.activity_length[shift][a-1];
             state.activity_task[shift][a] = state.activity_task[shift][a-1];
         }
@@ -145,7 +145,7 @@ void ActivityTaskChangeMove::abstract_revert_move(State& state)
         ++state.all_activity_count;
         ++state.shift_activity_count[shift];
 
-        for (int a = state.shift_activity_count[shift] - 1; a >= temp_activity + 2; --a) {
+        for (int a = state.shift_activity_count[shift] - 1; a >= temp_activity + 1; --a) {
             state.activity_length[shift][a] = state.activity_length[shift][a-1];
             state.activity_task[shift][a] = state.activity_task[shift][a-1];
         }
